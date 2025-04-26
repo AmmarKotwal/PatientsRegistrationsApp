@@ -50,54 +50,84 @@ export default function Registrations() {
     }
 
   return (
-    <div className='container'> <hr /><br />
-    <h1>Patients Registration's Form</h1> <hr /><br />
-    <input
-          type="text"
-          name="fullName"
-          placeholder="Full Name"
-          value={fullname}
-          onChange={(e) => setFullname(e.target.value)}
-        /><br/>
+    <div className="container mt-5">
+  <hr />
+  <h1 className="text-center mb-4">Patient Registration Form</h1>
+  <hr />
 
-        <input
-          type="number"
-          name="age"
-          placeholder="Age"
-          value={age}
-          onChange={(e) => setAge(e.target.value)}
-        /><br/>
+  <div className="row justify-content-center">
+    <div className="col-md-6">
+      <div className="p-4 rounded shadow-sm" style={{ maxWidth: '500px', backgroundColor: '#B0C4DE' }}>
 
-        <select
-          name="gender"
-          value={gender}
-          onChange={(e) => setGender(e.target.value)}
-        >
-          <option value="">Select Gender</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          <option value="Other">Other</option>
-        </select><br/>
+        <div className="mb-3">
+          <input
+            type="text"
+            name="fullName"
+            className="form-control"
+            placeholder="Full Name"
+            value={fullname}
+            onChange={(e) => setFullname(e.target.value)}
+          />
+        </div>
 
-        <input
-          type="text"
-          name="phoneNumber"
-          placeholder="Phone Number"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        /><br/>
+        <div className="mb-3">
+          <input
+            type="number"
+            name="age"
+            className="form-control"
+            placeholder="Age"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          />
+        </div>
 
-        <input
-          type="text"
-          name="address"
-          placeholder="Address (optional)"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        /><br/>
+        <div className="mb-3">
+          <select
+            name="gender"
+            className="form-select"
+            value={gender}
+            onChange={(e) => setGender(e.target.value)}
+          >
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
 
-        <button type="submit" onClick={save_data}>Register</button>
-        <ToastContainer />
-      
+        <div className="mb-3">
+          <input
+            type="text"
+            name="phoneNumber"
+            className="form-control"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+
+        <div className="mb-4">
+          <input
+            type="text"
+            name="address"
+            className="form-control"
+            placeholder="Address (optional)"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+        </div>
+
+        <div className="d-grid">
+          <button type="submit" className="btn btn-primary" onClick={save_data}>
+            Register
+          </button>
+        </div>
+
+      </div>
     </div>
+  </div>
+
+  <ToastContainer />
+</div>
   )
 }

@@ -9,7 +9,7 @@ let port = process.env.PORT || 7062;
 
 myapp.use(c());
 myapp.use(exp.json());
-myapp.use("/api/patients",r);
+myapp.use("/api/patients/",r);
 
 let sending_data = async function () {
     try {
@@ -28,7 +28,7 @@ let sending_data = async function () {
 db().then(()=>{
     // sending_data();
     myapp.listen(port,()=>{
-        console.log(`Server Is Running On http://localhost:${port}/api/patients`)
+        console.log(`Server Is Running On http://localhost:${port}/api/patients/`)
     })
 }).catch((e)=>{
     console.log(e)
