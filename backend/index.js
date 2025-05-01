@@ -1,6 +1,6 @@
 let exp = require("express");
 require("dotenv").config();
-let r = require("./Routings/route");
+let r = require("./Routings/Route");
 let db = require("./Db")
 let c = require("cors")
 let collection = require("./Collections/patients")
